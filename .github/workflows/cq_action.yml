@@ -34,7 +34,7 @@ jobs:
         sudo chmod +x /usr/bin/robot
     - name: Merge ontologies with robot
       run: |
-        robot merge --input AboutIDMPDev.rdf --output AboutIOFIDMPMerged.ttl --catalog /home/runner/work/idmp/idmp/catalog-v001.xml
+        robot merge --input AboutIDMPDev.rdf --output AboutIDMPMerged.ttl --catalog /home/runner/work/idmp/idmp/catalog-v001.xml
     - name: Run comptency questions using rdflib
       run: |
         python etc/cq_runner.py --folder_with_competency_questions etc/CQ/Example \
