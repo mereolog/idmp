@@ -34,11 +34,11 @@ jobs:
         sudo chmod +x /usr/bin/robot
     - name: Merge ontologies with robot
       run: |
-        robot merge --input AboutIDMPDev.rdf --output AboutIDMPDevMerged.ttl --catalog /home/runner/work/idmp/idmp/catalog-v001.xml
+        robot merge --input AboutIDMPDev-ReferenceIndividuals.rdf --output AboutIDMPDev-ReferenceIndividualsMerged.ttl --catalog /home/runner/work/idmp/idmp/catalog-v001.xml
     - name: Run comptency questions using rdflib
       run: |
         python etc/cq_runner.py --folder_with_competency_questions etc/CQ/Example \
-          --ontology_path /home/runner/work/idmp/idmp/AboutIDMPDevMerged.ttl
+          --ontology_path /home/runner/work/idmp/idmp/AboutIDMPDev-ReferenceIndividualsMerged.ttl
         if [ $? != 0 ];
         then
         exit $?
